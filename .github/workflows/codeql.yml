@@ -58,6 +58,8 @@ jobs:
       run: |
           autoreconf -f -i
           ./configure
+          CFLAGS="-Wp,-D_GLIBCXX_ASSERTIONS"
+          export CFLAGS
           CXXFLAGS="-Wp,-D_GLIBCXX_ASSERTIONS"
           export CXXFLAGS
           gcc --version
